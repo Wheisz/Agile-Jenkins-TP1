@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2018 Théodore SUPIOT <theodore.supiot@gmail.com> Allright reserved
+ * Copyright (c) 2018 Theodore SUPIOT
+ * <theodore.supiot@gmail.com>
+ * Allright reserved
  */
 
 /**

@@ -1,5 +1,7 @@
 /*
- * Copyright (c) 2018 Théodore SUPIOT <theodore.supiot@gmail.com> Allright reserved
+ * Copyright (c) 2018 Theodore SUPIOT
+ * <theodore.supiot@gmail.com>
+ * Allright reserved
  */
 
 package com.cours.tp1;
@@ -16,29 +18,29 @@ public class Application {
      * Entry point of the application.
      * @param args Argument for CLI.
      */
-    public static void main(String[] args) {
+    final public static void main(String[] args) {
         System.out.println("Hello World !!");
-        DateTime date = DateTime.now();
-        System.out.println(date.toString("dd/MM/YYYY HH:mm")); System.out.println(date.toString("dd/MM/YYYY HH:mm"));
+        final DateTime date = DateTime.now();
+        System.out.println(date.toString("dd/MM/YYYY HH:mm"));
     }
 
     /**
      * Add values and return the result.
-     * @param i first value.
-     * @param j second value.
+     * @param value1 first value.
+     * @param value2 second value.
      * @return result of addition
      */
-    public static int add(int i, int j) {
-        return i + j;
+    final public static int add(int value1, int value2) {
+        return value1 + value2;
     }
 
     /**
      * Subtract values and return the result.
-     * @param i first value
-     * @param j second value
+     * @param value1 first value
+     * @param value2 second value
      * @return result of subtraction
      */
-    public static int subtract(int i, int j) {
-        return i - j;
+    final public static int subtract(int value1, int value2) {
+        return value1 - value2;
     }
 }
