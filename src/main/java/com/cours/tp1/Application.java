@@ -30,6 +30,15 @@ public final class Application {
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
         System.out.println("Application started at : " + date);
+
+        final int value1 = 4;
+        final int value2 = 2;
+
+        int result = add(value1, value2);
+        System.out.println("Résultat addition : " + result);
+
+        result = subtract(value1, value2);
+        System.out.println("Résultat soustraction : " + result);
     }
 
     /**
