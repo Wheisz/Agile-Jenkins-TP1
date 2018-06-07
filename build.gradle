@@ -9,6 +9,7 @@ plugins {
     id 'pmd'
     id 'findbugs'
     id 'checkstyle'
+    id 'de.aaschmid.cpd' version '1.0'
 
 }
 
@@ -69,6 +70,17 @@ tasks.withType(Checkstyle) {
         xml.enabled true
         html.enabled false
     }
+}
+
+cpd {
+    minimumTokenCount = 10
+}
+tasks.withType(de.aaschmid.gradle.plugins.cpd.Cpd) {
+    reports {
+        xml.enabled = true
+        text.enabled = false
+    }
+    source = files('src')
 }
 
 test{
