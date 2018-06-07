@@ -7,14 +7,13 @@
 package com.cours.tp1;
 
 import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
 
 /**
  * My main Application.
  * @author Théodore Supiot
  * @version 1.0
  */
-public class Application {
+final public class Application {
 
     private Application(){
         super();
