@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'pmd'
+
 }
 
 group 'iia_m2_cours_agile'
@@ -14,4 +16,16 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'joda-time', name: 'joda-time', version: '2.10'
+}
+
+pmd{
+    pmdTest.enabled = false
+//    toolVersion = '5.8.1'
+}
+
+tasks.withType(Pmd){
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
