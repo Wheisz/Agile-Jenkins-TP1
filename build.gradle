@@ -26,6 +26,7 @@ pmd{
                 "java-naming", "java-optimizations", "java-strings",
                 "java-unusedcode"]
 //    toolVersion = '5.8.1'
+    ignoreFailures = true
 }
 
 tasks.withType(Pmd){
