@@ -25,10 +25,8 @@ final public class Application {
      */
     final public static void main(final String[] args) {
         System.out.println("Hello World !!");
-        DateTime date = DateTime.now();
+        final DateTime date = DateTime.now();
         System.out.println("Application started at : " + date);
-        date = null;
-        date.hourOfDay();
     }
 
     /**
