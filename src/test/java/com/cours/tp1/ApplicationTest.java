@@ -32,12 +32,11 @@ public class ApplicationTest {
 
         // Test case bad
         int result = Application.add(i, j);
-        int k = Application.add(i, j);
-        Assert.assertEquals("Add not good !", k, Integer.MIN_VALUE);
+        Assert.assertEquals("Add not good !", result, Integer.MIN_VALUE);
 
         // Test case Good
         Application.main(null);
-        k = Application.add(i, j);
+        result = Application.add(i, j);
 
         Assert.assertEquals("Add not good !", result, 5);
     }
