@@ -72,12 +72,4 @@ public final class Application {
 
         return result;
     }
-
-    // Findbugs test
-    @Override
-    public boolean equals(Object obj) {
-        //return super.equals(obj);
-        return true;
-    }
-
 }
