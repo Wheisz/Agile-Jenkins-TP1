@@ -11,7 +11,7 @@ plugins {
     id 'checkstyle'
     id 'de.aaschmid.cpd' version '1.0'
     id 'jacoco'
-
+    id 'jdepend'
 }
 
 group 'iia_m2_cours_agile'
@@ -97,6 +97,18 @@ tasks.withType(JacocoReport) {
         xml.enabled true
         html.enabled true
         csv.enabled true
+    }
+}
+
+// JDEPEND
+jdepend {
+    jdependTest.enabled = false
+    ignoreFailures = true
+}
+tasks.withType(JDepend) {
+    reports {
+        xml.enabled true
+        text.enabled false
     }
 }
 
