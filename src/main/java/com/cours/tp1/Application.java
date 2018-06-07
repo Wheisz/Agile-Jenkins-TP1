@@ -7,6 +7,7 @@
 package com.cours.tp1;
 
 import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 
 /**
  * My main Application.
@@ -21,7 +22,7 @@ public class Application {
     final public static void main(String[] args) {
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
-        System.out.println(date.toString("dd/MM/YYYY HH:mm"));
+        System.out.println(DateTimeFormat.longDateTime().print(date));
     }
 
     /**
