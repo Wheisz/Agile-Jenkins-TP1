@@ -15,6 +15,11 @@ import org.joda.time.format.DateTimeFormat;
  * @version 1.0
  */
 public class Application {
+
+    private Application(){
+        super();
+    }
+
     /**
      * Entry point of the application.
      * @param args Argument for CLI.
@@ -22,8 +27,7 @@ public class Application {
     final public static void main(final String[] args) {
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
-        final String dateString = DateTimeFormat.longDateTime().print(date);
-        System.out.println(dateString);
+        System.out.println("Application started at : " + date);
     }
 
     /**
