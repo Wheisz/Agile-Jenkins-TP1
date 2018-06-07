@@ -13,8 +13,11 @@ import org.joda.time.DateTime;
  * @author Théodore Supiot
  * @version 1.0
  */
-final public class Application {
+public final class Application {
 
+    /**
+     * Constructor
+     */
     private Application(){
         super();
     }
@@ -23,7 +26,7 @@ final public class Application {
      * Entry point of the application.
      * @param args Argument for CLI.
      */
-    final public static void main(final String[] args) {
+    public final static void main(final String[] args) {
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
         System.out.println("Application started at : " + date);
@@ -35,7 +38,7 @@ final public class Application {
      * @param value2 second value.
      * @return result of addition
      */
-    final public static int add(final int value1, final int value2) {
+    public final static int add(final int value1, final int value2) {
         return value1 + value2;
     }
 
@@ -45,7 +48,7 @@ final public class Application {
      * @param value2 second value
      * @return result of subtraction
      */
-    final public static int subtract(final int value1, final int value2) {
+    public final static int subtract(final int value1, final int value2) {
         return value1 - value2;
     }
 }

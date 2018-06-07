@@ -5,6 +5,6 @@
  */
 
 /**
- * Package TP1 du cours méthodologie Agile - Master 2 - 2018
+ * Package TP1 du cours méthodologie Agile - Master 2 - 2018.
  */
 package com.cours.tp1;
