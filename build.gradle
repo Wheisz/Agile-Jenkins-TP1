@@ -34,3 +34,7 @@ tasks.withType(Pmd){
         html.enabled true
     }
 }
+
+test{
+    ignoreFailures = true
+}
