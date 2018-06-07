@@ -1,5 +1,5 @@
-.classpath
 .gradle
 build/
-bin/
 doc/
+.idea/workspace.xml
+out/

@@ -8,6 +8,7 @@ plugins {
     id 'java'
     id 'pmd'
     id 'findbugs'
+    id 'checkstyle'
 
 }
 
@@ -27,15 +28,13 @@ dependencies {
 
 pmd{
     pmdTest.enabled = false
+    ignoreFailures = true
     ruleSets = ["java-basic", "java-braces", "java-clone", "java-codesize",
                 "java-comments", "java-controversial", "java-coupling",
                 "java-design", "java-empty", "java-finalizers", "java-imports",
                 "java-naming", "java-optimizations", "java-strings",
                 "java-unusedcode"]
-//    toolVersion = '5.8.1'
-    ignoreFailures = true
 }
-
 tasks.withType(Pmd){
     reports {
         xml.enabled true
@@ -44,6 +43,7 @@ tasks.withType(Pmd){
 }
 
 findbugs {
+    findbugsTest.enabled = false
     ignoreFailures = true
     effort = "max"
     showProgress = true
@@ -51,12 +51,23 @@ findbugs {
     visitors = ["FindSqlInjection", "SwitchFallthrough"]
     omitVisitors = ["FindNonShortCircuit"]
 }
-
 tasks.withType(FindBugs) {
     reports {
         xml.enabled true
         html.enabled false
-        html.stylesheet resources.text.fromFile('config/xsl/findbugs-custom.xsl')
+    }
+}
+
+checkstyle{
+    checkstyleTest.enabled = false
+    ignoreFailures = true
+    showViolations = true
+    configFile file("${project.rootDir}/config/checkstyle/sun_checks.xml")
+}
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
     }
 }
 
