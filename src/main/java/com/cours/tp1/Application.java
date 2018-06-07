@@ -19,10 +19,11 @@ public class Application {
      * Entry point of the application.
      * @param args Argument for CLI.
      */
-    final public static void main(String[] args) {
+    final public static void main(final String[] args) {
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
-        System.out.println(DateTimeFormat.longDateTime().print(date));
+        final String dateString = DateTimeFormat.longDateTime().print(date);
+        System.out.println(dateString);
     }
 
     /**
@@ -31,7 +32,7 @@ public class Application {
      * @param value2 second value.
      * @return result of addition
      */
-    final public static int add(int value1, int value2) {
+    final public static int add(final int value1, final int value2) {
         return value1 + value2;
     }
 
@@ -41,7 +42,7 @@ public class Application {
      * @param value2 second value
      * @return result of subtraction
      */
-    final public static int subtract(int value1, int value2) {
+    final public static int subtract(final int value1, final int value2) {
         return value1 - value2;
     }
 }
