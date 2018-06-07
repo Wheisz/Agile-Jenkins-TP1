@@ -15,6 +15,9 @@ import org.joda.time.DateTime;
  */
 public final class Application {
 
+    /** State of application. (true if running). */
+    private static boolean isRunning;
+
     /**
      * Constructor.
      */
@@ -27,6 +30,8 @@ public final class Application {
      * @param args Argument for CLI.
      */
     public static void main(final String[] args) {
+        isRunning = true;
+
         System.out.println("Hello World !!");
         final DateTime date = DateTime.now();
         System.out.println("Application started at : " + date);
@@ -39,7 +44,15 @@ public final class Application {
      * @return result of addition
      */
     public static int add(final int value1, final int value2) {
-        return value1 + value2;
+        int result;
+
+        if (isRunning) {
+            result = value1 + value2;
+        } else {
+            result = Integer.MIN_VALUE;
+        }
+
+        return result;
     }
 
     /**

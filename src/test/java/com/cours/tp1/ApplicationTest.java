@@ -29,7 +29,16 @@ public class ApplicationTest {
     public void testAdd(){
         int i = 2;
         int j = 3;
+
+        // Test case bad
         int result = Application.add(i, j);
+        int k = Application.add(i, j);
+        Assert.assertEquals("Add not good !", k, Integer.MIN_VALUE);
+
+        // Test case Good
+        Application.main(null);
+        k = Application.add(i, j);
+
         Assert.assertEquals("Add not good !", result, 5);
     }
 
