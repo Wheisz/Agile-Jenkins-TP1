@@ -9,7 +9,6 @@ plugins {
     id 'pmd'
     id 'findbugs'
     id 'checkstyle'
-    id 'de.aaschmid.cpd' version '1.0'
     id 'jacoco'
     id 'jdepend'
 }
@@ -27,6 +26,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'joda-time', name: 'joda-time', version: '2.10'
 }
+
+check.dependsOn 'cpd'
 
 // PMD
 pmd{
@@ -77,15 +78,19 @@ tasks.withType(Checkstyle) {
 }
 
 // CPD
-cpd {
-    ignoreFailures = true
-}
-tasks.withType(de.aaschmid.gradle.plugins.cpd.Cpd) {
-    reports {
-        xml.enabled = true
-        text.enabled = false
+task cpd {
+    doLast {
+        def cpdOutputDir = new File("${reportDir}/cpd")
+        cpdOutputDir.mkdirs()
+
+        ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
+
+        ant.cpd(minimumTokenCount: '25', format: 'xml', outputFile: new File(cpdOutputDir, 'cpdCheck.xml')) {
+            fileset(dir: 'src') {
+                include(name: '**/*.java')
+            }
+        }
     }
-    source = files('src')
 }
 
 // JACOCO
