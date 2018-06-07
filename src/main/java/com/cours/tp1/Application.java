@@ -19,7 +19,7 @@ public class Application {
     public static void main(String[] args) {
         System.out.println("Hello World !!");
         DateTime date = DateTime.now();
-        System.out.println(date.toString("dd/MM/YYYY HH:mm"));
+        System.out.println(date.toString("dd/MM/YYYY HH:mm")); System.out.println(date.toString("dd/MM/YYYY HH:mm"));
     }
 
     /**

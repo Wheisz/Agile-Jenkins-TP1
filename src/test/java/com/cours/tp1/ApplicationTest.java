@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Théodore SUPIOT <theodore.supiot@gmail.com> Allright reserved
+ */
+
 package com.cours.tp1;
 
 import org.junit.After;

@@ -20,6 +20,11 @@ dependencies {
 
 pmd{
     pmdTest.enabled = false
+    ruleSets = ["java-basic", "java-braces", "java-clone", "java-codesize",
+                "java-comments", "java-controversial", "java-coupling",
+                "java-design", "java-empty", "java-finalizers", "java-imports",
+                "java-naming", "java-optimizations", "java-strings",
+                "java-unusedcode"]
 //    toolVersion = '5.8.1'
 }
 
